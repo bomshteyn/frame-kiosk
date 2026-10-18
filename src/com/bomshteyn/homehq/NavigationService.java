@@ -1,4 +1,4 @@
-package com.wesbos.homehq;
+package com.bomshteyn.homehq;
 
 import android.accessibilityservice.AccessibilityService;
 import android.content.Intent;
@@ -55,7 +55,7 @@ public class NavigationService extends AccessibilityService {
         textView.setGravity(17);
         textView.setContentDescription("Drag navigation buttons");
         this.bar.addView(textView, new LinearLayout.LayoutParams(dp(40), dp(48)));
-        textView.setOnTouchListener(new View.OnTouchListener() { // from class: com.wesbos.homehq.NavigationService.1
+        textView.setOnTouchListener(new View.OnTouchListener() { // from class: com.bomshteyn.homehq.NavigationService.1
             int oldX;
             int oldY;
             float startX;
@@ -81,28 +81,28 @@ public class NavigationService extends AccessibilityService {
                 return true;
             }
         });
-        addButton("Back", new View.OnClickListener() { // from class: com.wesbos.homehq.NavigationService$$ExternalSyntheticLambda0
+        addButton("Back", new View.OnClickListener() { // from class: com.bomshteyn.homehq.NavigationService$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                NavigationService.this.m6lambda$onServiceConnected$0$comwesboshomehqNavigationService(view);
+                NavigationService.this.m6lambda$onServiceConnected$0$combomshteynhomehqNavigationService(view);
             }
         });
-        addButton("Dashboard", new View.OnClickListener() { // from class: com.wesbos.homehq.NavigationService$$ExternalSyntheticLambda1
+        addButton("Dashboard", new View.OnClickListener() { // from class: com.bomshteyn.homehq.NavigationService$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                NavigationService.this.m7lambda$onServiceConnected$1$comwesboshomehqNavigationService(view);
+                NavigationService.this.m7lambda$onServiceConnected$1$combomshteynhomehqNavigationService(view);
             }
         });
         updateVisibility();
     }
 
-    /* renamed from: lambda$onServiceConnected$0$com-wesbos-homehq-NavigationService, reason: not valid java name */
-    /* synthetic */ void m6lambda$onServiceConnected$0$comwesboshomehqNavigationService(View view) {
+    /* renamed from: lambda$onServiceConnected$0$com-bomshteyn-homehq-NavigationService, reason: not valid java name */
+    /* synthetic */ void m6lambda$onServiceConnected$0$combomshteynhomehqNavigationService(View view) {
         performGlobalAction(1);
     }
 
-    /* renamed from: lambda$onServiceConnected$1$com-wesbos-homehq-NavigationService, reason: not valid java name */
-    /* synthetic */ void m7lambda$onServiceConnected$1$comwesboshomehqNavigationService(View view) {
+    /* renamed from: lambda$onServiceConnected$1$com-bomshteyn-homehq-NavigationService, reason: not valid java name */
+    /* synthetic */ void m7lambda$onServiceConnected$1$combomshteynhomehqNavigationService(View view) {
         startActivity(new Intent(this, (Class<?>) MainActivity.class).addFlags(335544320));
     }
 

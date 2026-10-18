@@ -8,6 +8,8 @@ cd "$(dirname "$0")"
 
 VERSION_CODE=4
 VERSION_NAME=1.3
+# Installed app ID on the frames. Changing it makes Android treat the APK as a different app (manual reinstall).
+APP_ID=com.wesbos.homehq
 ANDROID_HOME="${ANDROID_HOME:-$HOME/android-sdk}"
 BT="${BUILD_TOOLS:-$ANDROID_HOME/build-tools/34.0.0}"
 JAR="$ANDROID_HOME/platforms/android-34/android.jar"
@@ -18,11 +20,12 @@ rm -rf build && mkdir -p build/gen build/classes
 
 "$BT/aapt2" compile --dir res -o build/res.zip
 "$BT/aapt2" link -o build/base.apk -I "$JAR" --manifest AndroidManifest.xml build/res.zip \
+  --rename-manifest-package "$APP_ID" \
   --java build/gen --min-sdk-version 23 --target-sdk-version 23 \
   --version-code "$VERSION_CODE" --version-name "$VERSION_NAME"
 
 javac -nowarn -source 8 -target 8 -classpath "$JAR" -d build/classes \
-  src/com/wesbos/homehq/*.java build/gen/com/wesbos/homehq/R.java
+  src/com/bomshteyn/homehq/*.java build/gen/com/bomshteyn/homehq/R.java
 
 "$BT/d8" --min-api 23 --lib "$JAR" --output build $(find build/classes -name '*.class')
 (cd build && zip -qj base.apk classes.dex)

@@ -1,4 +1,4 @@
-package com.wesbos.homehq;
+package com.bomshteyn.homehq;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

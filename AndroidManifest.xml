@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wesbos.homehq">
+    package="com.bomshteyn.homehq">
     <uses-sdk
         android:minSdkVersion="23"
         android:targetSdkVersion="23"/>
@@ -15,7 +15,7 @@
         android:hardwareAccelerated="true"
         android:usesCleartextTraffic="true">
         <receiver
-            android:name="com.wesbos.homehq.AdminReceiver"
+            android:name="com.bomshteyn.homehq.AdminReceiver"
             android:permission="android.permission.BIND_DEVICE_ADMIN"
             android:exported="true">
             <meta-data
@@ -26,10 +26,10 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.wesbos.homehq.InstallResultReceiver"
+            android:name="com.bomshteyn.homehq.InstallResultReceiver"
             android:exported="false"/>
         <receiver
-            android:name="com.wesbos.homehq.UpdatedReceiver"
+            android:name="com.bomshteyn.homehq.UpdatedReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
@@ -37,7 +37,7 @@
         </receiver>
         <service
             android:label="@string/navigation_label"
-            android:name="com.wesbos.homehq.NavigationService"
+            android:name="com.bomshteyn.homehq.NavigationService"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
             android:exported="true">
             <intent-filter>
@@ -48,7 +48,7 @@
                 android:resource="@xml/navigation_service"/>
         </service>
         <activity
-            android:name="com.wesbos.homehq.MainActivity"
+            android:name="com.bomshteyn.homehq.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="sensorLandscape"
             android:configChanges="screenSize|orientation|keyboardHidden|keyboard">
@@ -65,10 +65,10 @@
             </intent-filter>
         </activity>
         <activity-alias
-            android:name=".Home"
+            android:name="com.bomshteyn.homehq.Home"
             android:enabled="false"
             android:exported="true"
-            android:targetActivity=".MainActivity">
+            android:targetActivity="com.bomshteyn.homehq.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.HOME"/>

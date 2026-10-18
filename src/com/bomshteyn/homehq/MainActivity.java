@@ -1,4 +1,4 @@
-package com.wesbos.homehq;
+package com.bomshteyn.homehq;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -33,7 +33,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.wesbos.homehq.MainActivity;
+import com.bomshteyn.homehq.MainActivity;
 import org.json.JSONObject;
 
 /* loaded from: classes.dex */
@@ -56,7 +56,7 @@ public class MainActivity extends Activity {
     private final int[] exitIds = new int[2];
     private final float[] exitX = new float[2];
     private final float[] exitY = new float[2];
-    private final Runnable retry = new Runnable() { // from class: com.wesbos.homehq.MainActivity.1
+    private final Runnable retry = new Runnable() { // from class: com.bomshteyn.homehq.MainActivity.1
         @Override // java.lang.Runnable
         public void run() {
             if (MainActivity.this.retryUrl != null) {
@@ -66,7 +66,7 @@ public class MainActivity extends Activity {
     };
     private final Runnable showControls = new AnonymousClass2();
 
-    /* renamed from: com.wesbos.homehq.MainActivity$2, reason: invalid class name */
+    /* renamed from: com.bomshteyn.homehq.MainActivity$2, reason: invalid class name */
     class AnonymousClass2 implements Runnable {
         AnonymousClass2() {
         }
@@ -75,16 +75,16 @@ public class MainActivity extends Activity {
         public void run() {
             MainActivity.this.exitArmed = false;
             Log.i(MainActivity.TAG, "Two-finger hold: opening controls");
-            new AlertDialog.Builder(MainActivity.this).setTitle("Home HQ").setItems(new String[]{"Open launcher", "Android settings", "Wi-Fi settings", "Reload dashboard", "About this app"}, new DialogInterface.OnClickListener() { // from class: com.wesbos.homehq.MainActivity$2$$ExternalSyntheticLambda0
+            new AlertDialog.Builder(MainActivity.this).setTitle("Home HQ").setItems(new String[]{"Open launcher", "Android settings", "Wi-Fi settings", "Reload dashboard", "About this app"}, new DialogInterface.OnClickListener() { // from class: com.bomshteyn.homehq.MainActivity$2$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
-                    MainActivity.AnonymousClass2.this.m3lambda$run$0$comwesboshomehqMainActivity$2(dialogInterface, i);
+                    MainActivity.AnonymousClass2.this.m3lambda$run$0$combomshteynhomehqMainActivity$2(dialogInterface, i);
                 }
             }).setNegativeButton("Back to dashboard", (DialogInterface.OnClickListener) null).show();
         }
 
-        /* renamed from: lambda$run$0$com-wesbos-homehq-MainActivity$2, reason: not valid java name */
-        /* synthetic */ void m3lambda$run$0$comwesboshomehqMainActivity$2(DialogInterface dialogInterface, int i) {
+        /* renamed from: lambda$run$0$com-bomshteyn-homehq-MainActivity$2, reason: not valid java name */
+        /* synthetic */ void m3lambda$run$0$combomshteynhomehqMainActivity$2(DialogInterface dialogInterface, int i) {
             if (i == 0) {
                 MainActivity.this.openLauncher();
                 return;
@@ -121,7 +121,7 @@ public class MainActivity extends Activity {
         settings.setDomStorageEnabled(true);
         settings.setUseWideViewPort(true);
         settings.setMediaPlaybackRequiresUserGesture(false);
-        this.web.setWebViewClient(new WebViewClient() { // from class: com.wesbos.homehq.MainActivity.3
+        this.web.setWebViewClient(new WebViewClient() { // from class: com.bomshteyn.homehq.MainActivity.3
             @Override // android.webkit.WebViewClient
             public void onPageStarted(WebView webView2, String str, Bitmap bitmap) {
                 MainActivity.this.pageFailed = false;
@@ -229,23 +229,23 @@ public class MainActivity extends Activity {
         boolean isDeviceOwner = isDeviceOwner();
         AlertDialog.Builder positiveButton = new AlertDialog.Builder(this).setTitle("About this app").setMessage("Version " + str + " (" + i + ")\nAutomatic updates: " + (isDeviceOwner ? "on" : "off — run the setup command")).setPositiveButton("Close", (DialogInterface.OnClickListener) null);
         if (isDeviceOwner) {
-            positiveButton.setNeutralButton("Turn off automatic updates", new DialogInterface.OnClickListener() { // from class: com.wesbos.homehq.MainActivity$$ExternalSyntheticLambda1
+            positiveButton.setNeutralButton("Turn off automatic updates", new DialogInterface.OnClickListener() { // from class: com.bomshteyn.homehq.MainActivity$$ExternalSyntheticLambda1
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i2) {
-                    MainActivity.this.m2lambda$showAbout$0$comwesboshomehqMainActivity(dialogInterface, i2);
+                    MainActivity.this.m2lambda$showAbout$0$combomshteynhomehqMainActivity(dialogInterface, i2);
                 }
             });
         }
         positiveButton.show();
     }
 
-    /* renamed from: lambda$showAbout$0$com-wesbos-homehq-MainActivity, reason: not valid java name */
-    /* synthetic */ void m2lambda$showAbout$0$comwesboshomehqMainActivity(DialogInterface dialogInterface, int i) {
+    /* renamed from: lambda$showAbout$0$com-bomshteyn-homehq-MainActivity, reason: not valid java name */
+    /* synthetic */ void m2lambda$showAbout$0$combomshteynhomehqMainActivity(DialogInterface dialogInterface, int i) {
         confirmDisableAutomaticUpdates();
     }
 
     private void confirmDisableAutomaticUpdates() {
-        new AlertDialog.Builder(this).setTitle("Turn off automatic updates?").setMessage("Home HQ will no longer install app updates automatically.").setNegativeButton("Cancel", (DialogInterface.OnClickListener) null).setPositiveButton("Turn off", new DialogInterface.OnClickListener() { // from class: com.wesbos.homehq.MainActivity$$ExternalSyntheticLambda0
+        new AlertDialog.Builder(this).setTitle("Turn off automatic updates?").setMessage("Home HQ will no longer install app updates automatically.").setNegativeButton("Cancel", (DialogInterface.OnClickListener) null).setPositiveButton("Turn off", new DialogInterface.OnClickListener() { // from class: com.bomshteyn.homehq.MainActivity$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 MainActivity.this.m1xabc02e80(dialogInterface, i);
@@ -253,7 +253,7 @@ public class MainActivity extends Activity {
         }).show();
     }
 
-    /* renamed from: lambda$confirmDisableAutomaticUpdates$1$com-wesbos-homehq-MainActivity, reason: not valid java name */
+    /* renamed from: lambda$confirmDisableAutomaticUpdates$1$com-bomshteyn-homehq-MainActivity, reason: not valid java name */
     /* synthetic */ void m1xabc02e80(DialogInterface dialogInterface, int i) {
         DevicePolicyManager devicePolicyManager = (DevicePolicyManager) getSystemService("device_policy");
         if (devicePolicyManager == null || !devicePolicyManager.isDeviceOwnerApp(getPackageName())) {
@@ -298,18 +298,18 @@ public class MainActivity extends Activity {
         button.setText("Open Wi-Fi settings");
         button.setTextSize(2, 22.0f);
         button.setPadding(dp(32.0f), dp(16.0f), dp(32.0f), dp(16.0f));
-        button.setOnClickListener(new View.OnClickListener() { // from class: com.wesbos.homehq.MainActivity$$ExternalSyntheticLambda2
+        button.setOnClickListener(new View.OnClickListener() { // from class: com.bomshteyn.homehq.MainActivity$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MainActivity.this.m0lambda$buildOffline$2$comwesboshomehqMainActivity(view);
+                MainActivity.this.m0lambda$buildOffline$2$combomshteynhomehqMainActivity(view);
             }
         });
         this.offline.addView(button, new LinearLayout.LayoutParams(-2, -2));
         return this.offline;
     }
 
-    /* renamed from: lambda$buildOffline$2$com-wesbos-homehq-MainActivity, reason: not valid java name */
-    /* synthetic */ void m0lambda$buildOffline$2$comwesboshomehqMainActivity(View view) {
+    /* renamed from: lambda$buildOffline$2$com-bomshteyn-homehq-MainActivity, reason: not valid java name */
+    /* synthetic */ void m0lambda$buildOffline$2$combomshteynhomehqMainActivity(View view) {
         openWifiSettings();
     }
 
@@ -348,16 +348,16 @@ public class MainActivity extends Activity {
 
         @JavascriptInterface
         public void setScreenOff(final boolean z) {
-            MainActivity.this.handler.post(new Runnable() { // from class: com.wesbos.homehq.MainActivity$Bridge$$ExternalSyntheticLambda1
+            MainActivity.this.handler.post(new Runnable() { // from class: com.bomshteyn.homehq.MainActivity$Bridge$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MainActivity.Bridge.this.m5lambda$setScreenOff$0$comwesboshomehqMainActivity$Bridge(z);
+                    MainActivity.Bridge.this.m5lambda$setScreenOff$0$combomshteynhomehqMainActivity$Bridge(z);
                 }
             });
         }
 
-        /* renamed from: lambda$setScreenOff$0$com-wesbos-homehq-MainActivity$Bridge, reason: not valid java name */
-        /* synthetic */ void m5lambda$setScreenOff$0$comwesboshomehqMainActivity$Bridge(boolean z) {
+        /* renamed from: lambda$setScreenOff$0$com-bomshteyn-homehq-MainActivity$Bridge, reason: not valid java name */
+        /* synthetic */ void m5lambda$setScreenOff$0$combomshteynhomehqMainActivity$Bridge(boolean z) {
             WindowManager.LayoutParams attributes = MainActivity.this.getWindow().getAttributes();
             attributes.screenBrightness = z ? 0.0f : -1.0f;
             MainActivity.this.getWindow().setAttributes(attributes);
@@ -402,17 +402,17 @@ public class MainActivity extends Activity {
             return Math.round((audioManager.getStreamVolume(3) * 100.0f) / streamMaxVolume);
         }
 
-        /* renamed from: lambda$restartApp$1$com-wesbos-homehq-MainActivity$Bridge, reason: not valid java name */
-        /* synthetic */ void m4lambda$restartApp$1$comwesboshomehqMainActivity$Bridge() {
+        /* renamed from: lambda$restartApp$1$com-bomshteyn-homehq-MainActivity$Bridge, reason: not valid java name */
+        /* synthetic */ void m4lambda$restartApp$1$combomshteynhomehqMainActivity$Bridge() {
             MainActivity.this.recreate();
         }
 
         @JavascriptInterface
         public void restartApp() {
-            MainActivity.this.handler.post(new Runnable() { // from class: com.wesbos.homehq.MainActivity$Bridge$$ExternalSyntheticLambda0
+            MainActivity.this.handler.post(new Runnable() { // from class: com.bomshteyn.homehq.MainActivity$Bridge$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MainActivity.Bridge.this.m4lambda$restartApp$1$comwesboshomehqMainActivity$Bridge();
+                    MainActivity.Bridge.this.m4lambda$restartApp$1$combomshteynhomehqMainActivity$Bridge();
                 }
             });
         }
@@ -481,7 +481,7 @@ public class MainActivity extends Activity {
             return;
         }
         boolean booleanExtra = intent.getBooleanExtra("home", false);
-        getPackageManager().setComponentEnabledSetting(new ComponentName(this, getPackageName() + ".Home"), booleanExtra ? 1 : 0, 1);
+        getPackageManager().setComponentEnabledSetting(new ComponentName(this, MainActivity.class.getPackage().getName() + ".Home"), booleanExtra ? 1 : 0, 1);
         Log.i(TAG, "Home alias " + (booleanExtra ? "on" : "off"));
     }
 

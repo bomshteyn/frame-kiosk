@@ -1,4 +1,4 @@
-package com.wesbos.homehq;
+package com.bomshteyn.homehq;
 
 import android.app.PendingIntent;
 import android.app.admin.DevicePolicyManager;
@@ -37,7 +37,7 @@ public final class Updater {
                 lastCheckAt = currentTimeMillis;
                 final Context applicationContext = context.getApplicationContext();
                 Log.i(TAG, "Starting app update check");
-                new Thread(new Runnable() { // from class: com.wesbos.homehq.Updater$$ExternalSyntheticLambda0
+                new Thread(new Runnable() { // from class: com.bomshteyn.homehq.Updater$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
                         Updater.checkInBackground(applicationContext, str);
